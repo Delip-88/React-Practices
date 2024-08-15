@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bar{
+    background-color: yellow;
+    height: 100%;
+    max-width: 590px;    
+    margin-right: auto;
+    padding: 0;
+}
+ul{
+    width: 100%;
+    display: grid;
+    margin-top: 20px;
+    place-content: center;
+}
+.barlist{
+    width: 1000px ;
+    /* background-color: grey; */
+    list-style-type: none;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 30px; */
+    align-items: center;
+}
+
+.countryName{
+    width: 250px;
+}
+.population{
+    width: 100px;
+    text-align: right;
+}

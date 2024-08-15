@@ -1,0 +1,17 @@
+.Navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: skyblue;
+}
+
+#search,#submit{
+    padding: 10px 25px;
+    width: 500px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+#submit{
+    width: 100px;
+}

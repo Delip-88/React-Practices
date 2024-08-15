@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  place-content: center;
+
+}
+
+form{
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: rgb(228, 226, 226);
+}
+label{
+  display: flex;
+  gap: 5px;
+}
+form input{
+  border: none;
+  padding: 5px 12px;
+  border-radius: 3px;
+}
+
+.btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+button{
+  padding: 5px 12px;
+  background-color: rgb(34, 255, 34);
+  border: 1px solid white;
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+}
