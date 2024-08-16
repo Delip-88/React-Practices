@@ -1,0 +1,97 @@
+.movieCard{
+cursor: pointer;
+
+}
+.movieDetails {
+  position: fixed;
+  inset: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(1, 1, 46);
+  justify-content: flex-start;
+  padding: 30px;
+overflow: hidden;
+color: white;
+
+}
+
+.movieDetails h2{
+    font-size: 50px;
+}
+.img_plot{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-top: 30px;
+}
+.close {
+  width: 50%;
+  padding: 5px;
+  font-size: 20px;
+  margin: auto;
+  align-self: baseline;
+  cursor: pointer;
+}
+
+.imgWrap {
+  width: 200px;
+  height:280px;
+  object-fit: cover;
+
+}
+.img_plot p{
+    max-width: 700px;
+}
+
+.movieDetails img{
+    width: 100%;
+    height: 100%;
+}
+
+/* From Uiverse.io by Navarog21 */ 
+.close {
+    width: 50%;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    /* background-color: #212121; */
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  .close::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    /* background-color: #212121; */
+    transition: 0.5s;
+  }
+  
+  .close:hover::before, .close:hover::after {
+    transform: scale(0)
+  }
+  
+  .close:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }

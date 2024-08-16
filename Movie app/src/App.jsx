@@ -32,6 +32,7 @@ function App() {
       const result = await response.json();
       if (result.Response === "True") {
         setData(result);
+        // console.log(result)
       } else {
         setData(null); // Clear data if no results
         setError(result.Error);
@@ -64,6 +65,11 @@ function App() {
     fetchData(1); // Fetch data for the first page
   };
 
+  const home=()=>{
+    setData(null)
+    setSearch('')
+    setPage(1)
+  }
   const Loader = (
     <div className="loader">
     <div className="bar1"></div>
@@ -85,7 +91,7 @@ function App() {
     <>
       <div className="container">
         <header>
-          <h1>Movie Mania</h1>
+          <h1 className='home' onClick={home}>Movie Mania</h1>
           <div className="inputWrapper">
             <input
               type="text"
@@ -104,7 +110,7 @@ function App() {
               <option value="movie">Movie</option>
               <option value="series">Series</option>
             </select>
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch} className='searchbtn'><span>search</span></button>
           </div>
         </header>
         {loading && Loader}
