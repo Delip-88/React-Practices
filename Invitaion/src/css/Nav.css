@@ -1,0 +1,98 @@
+nav{
+  width: 100%;
+  padding: 15px 70px;
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: fit-content;
+  top: 0;
+  z-index: 100;
+  color: white;
+  box-shadow: 0px 1px 0px rgba(165, 165, 165, 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition for background and text color */
+}
+.logo{
+  font-size: 25px;
+}
+.bars{
+  color: var(--btn_color);
+  cursor: pointer;
+}
+
+nav > span{
+  font-size: 30px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+nav .expandbar{
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  align-items: center;
+  height: 100%;
+}
+a.navlink:hover{
+  color: var(--btn_color) !important;
+  background-color: red;
+}
+nav li{
+  list-style-type: none;
+}
+
+li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+.logo{
+}
+
+nav a{
+  transition: color 0.3s ease; /* Transition for link color */
+
+}
+
+@media only screen and (max-width:1100px){
+  .navlink{
+    font-size: 13px;
+  }
+}
+
+.collapsebar{
+  position: absolute;
+  top: 65px;
+  z-index: 1000;
+  background-color:#242424 !important;
+  height:max-content !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
+  color: white;
+  width: 75% !important;
+  min-width: 100px;
+}
+
+.collapsebar li{
+  width: 100%;
+}
+
+.collapsebar li a{
+  font-size: 16px;
+  color: rgb(102, 102, 102);
+  padding: 10px 30px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: background-color 0.3s ease,color 0.3s ease; 
+   
+}
+
+.collapsebar li a:hover{
+  color: rgb(231, 54, 54) !important;
+  background-color: rgb(5, 3, 3) !important; 
+}
+

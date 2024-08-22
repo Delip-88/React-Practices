@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.ourlove{
+    margin-top: 60px;
+    width: 100%;
+    background-image: url('../img/seas.jpg');
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    display: grid;
+    place-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.ourlove::after{
+    position: absolute;
+    content: '';
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.199);
+}
+
+.ourlove h1{
+    width: 100%;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight:800;
+    font-size: 60px;
+    color: white;
+    font-style: normal;
+    position: relative;
+    z-index: 2;
+}
+@media only screen and (max-width: 700px){
+    .ourlove h1{
+        font-size: 35px;
+    }
+}

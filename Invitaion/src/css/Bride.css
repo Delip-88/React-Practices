@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+.wrapper h1 {
+  text-align: center;
+  width: 100%;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 50px;
+  margin-top: 80px;
+}
+.card {
+  width: 435px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgWrapper {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.imgWrapper img {
+  height: 100%;
+  width: 100%;
+}
+
+.infoContainer {
+  display: grid;
+  place-content: center;
+  min-width: 400px;
+}
+.infoContainer .info h3 {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+}
+.userName {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 50px;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.info {
+  width: 90%;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px 40px;
+  padding: 10px;
+  flex-direction: column;
+  transform: translateY(-50px);
+  border-radius: 6px;
+  background-color: white;
+  /* border: 1px solid gainsboro; */
+  box-shadow: 0px 0px 4px 1px rgb(173, 173, 173);
+}
+.info .socialIcons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.userInfo {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: rgb(71, 71, 71);
+}
+.icon {
+  cursor: pointer;
+  margin-right: 10px; /* Spacing between icons */
+  color: #333; /* Default icon color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scale and color */
+}
+
+.icon:hover {
+  transform: scale(1.2); /* Scale up on hover */
+}
+
+.facebook {
+  color: #3b5998; /* Facebook blue */
+}
+
+.facebook:hover {
+  color: #2d4373; /* Darker Facebook blue on hover */
+}
+
+.twitter {
+  color: #1da1f2; /* Twitter blue */
+}
+
+.twitter:hover {
+  color: #0d95e8; /* Darker Twitter blue on hover */
+}
+
+.instagram {
+  color: #e1306c; /* Instagram pink */
+}
+
+.instagram:hover {
+  color: #bc2a8d; /* Darker Instagram pink on hover */
+}
+
+.linkedin {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.linkedin:hover {
+  color: #005582; /* Darker LinkedIn blue on hover */
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 85%;
+  }
+  .infoContainer {
+    min-width: auto;
+    font-size: smaller;
+  }
+  .wrapper h1 {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .card {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .userInfo{
+    font-size: 12px;
+  }
+}

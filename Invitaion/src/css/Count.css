@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+.countContainer {
+  background-image: url("../img/car.jpg");
+  background-size: cover;
+  background-position: top;
+  background-attachment: scroll;
+  height: 500px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.attending {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 50px;
+}
+.counter {
+  display: flex;
+  padding-top: 40px;
+  gap: 50px;
+}
+.wrapCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.397);
+  border-radius: 6px;
+}
+
+.count {
+  font-size: 50px;
+}
+
+@media only screen and (max-width: 684px){
+    .attending{
+        font-size: 35px;
+    }
+    .wrapCount{
+        padding: 5px 12px;
+    }
+    span.count{
+        font-size: 20px;
+    }
+    .counter{
+        gap: 25px;
+    }
+}

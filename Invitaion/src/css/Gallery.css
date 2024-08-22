@@ -1,0 +1,119 @@
+.GalleryContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.GalleryContainer h1.MainTopic {
+  margin-top: 50px;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 60px;
+  font-style: normal;
+}
+
+.GalleryContainer .btns {
+  border-radius: 22px;
+  padding: 10px 13px;
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  gap: 5px;
+}
+
+.btns button {
+  all: unset;
+  padding: 6px 12px;
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 13px;
+  transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--btn_color) !important;
+  color: white !important;
+  transition: background-color 500ms ease-in-out !important;
+}
+
+.imageContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px; /* Adjust as needed for spacing between images */
+  transition: grid-template-columns 0.5s ease-in-out;
+}
+
+.imagecover {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.imagecover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.imagecover:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.modalContent img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeBtn:hover {
+  color: #ff6f6f;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

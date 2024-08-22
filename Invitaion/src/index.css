@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sedan:ital@0;1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --btn_color: rgb(255, 33, 79);
+  --good_color: rgb(9, 162, 223);
+}
+body {
+  /* background-color: blueviolet; */
+  width: 100%;
+  font-family: "Montserrat", "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #f9f9f8;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: smaller;
+  }
+}
+@media only screen and (max-width: 500px) {
+  h1{
+    font-size: 35px;
+  }
+}
