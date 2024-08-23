@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import w1 from "../img/wedding/w1.jpg";
 import w2 from "../img/wedding/w2.jpg";
 import w3 from "../img/wedding/w3.jpg";
@@ -9,7 +9,7 @@ import w7 from "../img/wedding/w7.jpg";
 import w8 from "../img/wedding/w8.jpg";
 import "../css/Gallery.css";
 
-function Gallery() {
+const Gallery=forwardRef((props,ref)=> {
   const imgData = [
     { imgUrl: w1, type: "wedding" },
     { imgUrl: w2, type: "party" },
@@ -46,9 +46,9 @@ function Gallery() {
   }, [activeSection]);
 
   return (
-    <div className="GalleryContainer">
-      <h1 className="MainTopic">Our Gallery</h1>
-      <div className="btns">
+    <div className="GalleryContainer" ref={ref}>
+      <h1 className="MainTopic" data-aos="fade-down">Our Gallery</h1>
+      <div className="btns" data-aos="fade-up" >
         <button
           onClick={() => setActiveSection("all")}
           className={activeSection === "all" ? "active" : ""}
@@ -74,7 +74,7 @@ function Gallery() {
           Party
         </button>
       </div>
-      <div className="imageContainer">
+      <div className="imageContainer" data-aos="fade-up" data-aos-delay="400">
         {filteredData.map((img, index) => (
           <div
             className="imagecover"
@@ -99,6 +99,6 @@ function Gallery() {
       )}
     </div>
   );
-}
+})
 
 export default Gallery;

@@ -43,8 +43,8 @@ function Coutdown() {
 
   return (
     <div className="countContainer">
-      <h1 className="attending">Are You Attending ?</h1>
-      <div className="counter">
+      <h1 className="attending" data-aos="fade-down">Are You Attending ?</h1>
+      <div className="counter" data-aos="fade-up">
         <div className="wrapCount">
           <span className="count">{Countdown.Days}</span>
           <span>Days</span>

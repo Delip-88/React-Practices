@@ -1,21 +1,21 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import first from "../img/firstMeet.jpg";
 import second from "../img/firstDate.jpg";
 import third from "../img/whoProposed.jpg";
 import "../css/Story.css";
 
-function Story() {
+const Story =forwardRef((props,ref)=>{
   const Box = ({ details, reverse }) => {
     const { topic, topicDate, topicDetails, imgUrl } = details;
 
     return (
-      <div className={`divContain ${reverse ? "reverse" : ""}`}>
-        <div className="storyDetails">
+      <div className={`divContain ${reverse ? "reverse" : ""}`} ref={ref}>
+        <div className="storyDetails" data-aos="fade-right">
           <h1 className="storyTopic">{topic}</h1>
           <span className="storyDate">{topicDate}</span>
           <p className="storyDetail">{topicDetails}</p>
         </div>
-        <div className="storyImage">
+        <div className="storyImage" data-aos="fade-left">
           <img src={imgUrl} alt={topic} />
         </div>
       </div>
@@ -24,7 +24,7 @@ function Story() {
 
   return (
     <div className="storyContainer">
-      <h1 className="storyHeading">Our Love Story</h1>
+      <h1 className="storyHeading" data-aos="fade-down" data-aos-delay="200">Our Love Story</h1>
       <Box
         details={{
           topic: "First Meet",
@@ -55,6 +55,6 @@ function Story() {
       />
     </div>
   );
-}
+})
 
 export default Story;

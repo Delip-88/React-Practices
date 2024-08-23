@@ -5,13 +5,19 @@
   box-sizing: border-box;
 }
 
+/* App.css or similar */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+
 :root {
   --btn_color: rgb(255, 33, 79);
   --good_color: rgb(9, 162, 223);
 }
-body {
+body,html {
   /* background-color: blueviolet; */
-  width: 100%;
+  width: 100svw;
   font-family: "Montserrat", "Sedan", serif;
   font-weight: 400;
   font-style: normal;

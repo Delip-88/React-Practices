@@ -1,13 +1,10 @@
-import React from "react";
-import img1 from "../img/img-1.jpg";
-import img2 from "../img/img-2.jpg";
-import img3 from "../img/img-3.jpg";
+import React, { forwardRef } from "react";
 import love from "../img/love.png";
 import '../css/homepage.css'
-function HomePage() {
+const HomePage=forwardRef((props,ref)=> {
   return (
-    <main>
-      <div className="intro">
+    <main ref={ref}>
+      <div className="intro" data-aos="fade-up">
         <h1>Mamta & Kakashi</h1>
         <h3>WE ARE GETTING MARRIED</h3>
         <div className="loveWrapper">
@@ -17,6 +14,6 @@ function HomePage() {
       </div>
     </main>
   );
-}
+})
 
 export default HomePage;

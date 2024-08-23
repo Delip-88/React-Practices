@@ -100,3 +100,35 @@
     font-weight: 500;
     font-style: normal;
 }
+
+@media only screen and (max-width : 1200px){
+.divContain{
+    flex-wrap: wrap-reverse;
+}
+
+.divContain::after, .divContain::before{
+    display: none;
+    content: none;
+}
+.storyImage{
+    width: minmax(300px,80%);
+
+    padding: 10px 0;
+}
+.storyDetails,.storyImage{
+    width: 100% !important;
+    margin: 0;
+}
+.storyDetails{
+    padding:10px;
+}
+.divContain .storyDetails{
+    width: 100%;
+    text-align: center !important;
+}
+.divContain .storyTopic{
+    text-align: center !important;
+}
+
+
+}

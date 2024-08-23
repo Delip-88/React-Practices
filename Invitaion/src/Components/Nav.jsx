@@ -2,19 +2,15 @@ import React, { useEffect, useState } from "react";
 import "../css/Nav.css";
 import { FaBars } from "react-icons/fa";
 
-function Nav() {
+function Nav({ homeRef, brideRef, storyRef, eventsRef, galleryRef, rspvRef, groomsmenRef }) {
   const [navStyle, setNavStyle] = useState({
     backgroundColor: "transparent",
     color: "white",
   });
 
-  const expandStyle = {
-    display: "flex",
-    gap: "30px",
-    margin: "0",
-    alignItems: "center",
-    height: "100%",
-  };
+  const [expand, setExpand] = useState(false);
+  const [toggle, setToggle] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY + 100 > window.innerHeight) {
@@ -29,7 +25,7 @@ function Nav() {
         });
       }
     };
-    window.addEventListener("load",handleScroll)
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -42,35 +38,45 @@ function Nav() {
         setToggle(true);
       } else {
         setToggle(false);
-        setexpand(false)
+        setExpand(false);
       }
     };
+
     window.addEventListener("resize", handleResize);
-    window.addEventListener("load",handleResize)
+    handleResize(); // Initial call
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  const [expand, setexpand] = useState(false);
-  const [toggle, setToggle] = useState(false);
+  const scrollToSection = (event, sectionRef) => {
+    event.preventDefault();
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const comp = [
-    { Name: "Home", Link: "#" },
-    { Name: "Couple", Link: "#" },
-    { Name: "Story", Link: "#" },
-    { Name: "Events", Link: "#" },
-    { Name: "People", Link: "#" },
-    { Name: "Gallery", Link: "#" },
-    { Name: "RSPV", Link: "#" },
-    { Name: "Blog", Link: "#" },
+    { Name: "Home", Ref: homeRef },
+    { Name: "Couple", Ref: brideRef },
+    { Name: "Story", Ref: storyRef },
+    { Name: "Events", Ref: eventsRef },
+    { Name: "People", Ref: groomsmenRef }, // Assuming this should be galleryRef
+    { Name: "Gallery", Ref: galleryRef },
+    { Name: "RSPV", Ref: rspvRef },
   ];
 
   const NAV = (CN = "expandbar") => {
     return (
-      <ul style={expandStyle} className={CN}>
+      <ul className={CN}>
         {comp.map((item) => (
           <li key={item.Name}>
-            <a href={item.Link} className="navlink" style={navStyle}>
+            <a
+              href={`#${item.Name}`}
+              className="navlink"
+              style={navStyle}
+              onClick={(e) => scrollToSection(e, item.Ref)}
+            >
               {item.Name}
             </a>
           </li>
@@ -78,9 +84,11 @@ function Nav() {
       </ul>
     );
   };
+
   const showElements = () => {
-    setexpand(!expand);
+    setExpand(!expand);
   };
+
   const Collapse = () => {
     return (
       <span className="burger" onClick={showElements}>
@@ -88,25 +96,22 @@ function Nav() {
       </span>
     );
   };
+
   const DropdownBar = () => {
-    return (
-      <>
-        {NAV(`collapsebar ${expand ? "expand" : ""}`)}
-      </>
-    );
+    return <>{NAV(`collapsebar ${expand ? "expand" : ""}`)}</>;
   };
-  
+
   return (
     <nav
       className="solidnavbar"
       style={{ backgroundColor: navStyle.backgroundColor }}
+      data-aos="fade-down"
     >
-      <span className="logo" style={{ color: navStyle.color }}>
+      <span className="logo" onClick={()=>window.location.reload()}  style={{ color: navStyle.color, cursor :'pointer' }}>
         Logo
       </span>
-      {toggle ? <Collapse /> : <NAV />}
-
-{(expand && toggle) ? <DropdownBar /> : ''}
+      {toggle ? <Collapse /> : NAV()}
+      {expand && toggle && <DropdownBar />}
     </nav>
   );
 }

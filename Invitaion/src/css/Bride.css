@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 80px;
 }
 .wrapper h1 {
   text-align: center;
@@ -24,6 +24,7 @@
   font-weight: 800;
   font-size: 50px;
   margin-top: 80px;
+  margin-bottom: 50px;
 }
 .card {
   width: 435px;
@@ -150,6 +151,9 @@
 @media only screen and (max-width: 970px) {
   .card {
     width: 80%;
+  }
+  .cards{
+    gap: 30px;
   }
 }
 

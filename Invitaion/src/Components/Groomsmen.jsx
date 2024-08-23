@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { ImInstagram } from "react-icons/im";
@@ -14,7 +14,7 @@ import img6 from "../img/card/f2.jpg";
 import img7 from "../img/card/f3.jpg";
 import img8 from "../img/card/f4.jpg";
 
-function Groomsmen() {
+const Groomsmen=forwardRef((props,ref)=> {
   const [activeSection, setActiveSection] = useState("men");
 
   const menData = [
@@ -32,7 +32,7 @@ function Groomsmen() {
   ];
 
   const BluePrint = ({ data }) => (
-    <div className="cardContainer">
+    <div className="cardContainer" data-aos="zoom-out" data-aos-duration="500">
       {data.map((person) => (
         <div className="personCard" key={person.Name}>
           <div className="personImg">
@@ -52,9 +52,9 @@ function Groomsmen() {
   );
 
   return (
-    <div className="menMainContainer">
-      <h1 className="MainTopic">GroomsMen & BridesMaid</h1>
-      <div className="btns">
+    <div className="menMainContainer" ref={ref}>
+      <h1 className="MainTopic" data-aos="fade-down">GroomsMen & BridesMaid</h1>
+      <div className="btns" data-aos="fade-up">
         <button onClick={() => setActiveSection("men")} className={activeSection === "men" ? "active" : ""}>Groomsmen</button>
         <button onClick={() => setActiveSection("maid")} className={activeSection === "maid" ? "active" : ""}>Bridesmaid</button>
       </div>
@@ -62,6 +62,6 @@ function Groomsmen() {
       {activeSection === "maid" && <BluePrint data={maidData} />}
     </div>
   );
-}
+})
 
 export default Groomsmen;
